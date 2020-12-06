@@ -75,11 +75,22 @@ class Joueur:
 
     #gestion lunettes
     def lunettes(self):
-        self.__caseCourante.decouvrir()
-        self.__caseCourante.getCaseNord().decouvrir()
-        self.__caseCourante.getCaseSud().decouvrir()
-        self.__caseCourante.getCaseEst().decouvrir()
-        self.__caseCourante.getCaseOuest().decouvrir()
+        try:
+            self.__caseCourante.getCaseNord().decouvrir()
+        except:
+            pass
+        try:
+            self.__caseCourante.getCaseSud().decouvrir()
+        except:
+            pass
+        try:
+            self.__caseCourante.getCaseEst().decouvrir()
+        except:
+            pass
+        try:
+            self.__caseCourante.getCaseOuest().decouvrir()
+        except:
+            pass
 
     def Decouvrelampe(self):
         if self.__caseCourante.estOuvertNord() and self.__caseCourante.getCaseNord().estOuvertNord(): 
